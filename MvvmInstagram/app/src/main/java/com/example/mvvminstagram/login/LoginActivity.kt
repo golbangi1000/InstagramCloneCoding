@@ -12,9 +12,7 @@ class LoginActivity : AppCompatActivity() {
 
 
     lateinit var binding : ActivityLoginBinding
-//    lateinit var loginViewModel: LoginViewModel // 1번
-    val loginViewModel : LoginViewModel by viewModel
-
+    lateinit var loginViewModel: LoginViewModel // 1번
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
