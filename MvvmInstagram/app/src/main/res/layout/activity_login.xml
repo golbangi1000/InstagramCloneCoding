@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <!-- 타입은 클래스 name은 이름 -->
         <variable
             name="viewModel"
             type="com.example.mvvminstagram.login.LoginViewModel" />
@@ -69,7 +70,7 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:onClick="@{() -> activity.loginEmail}"
+                android:onClick="@{() -> activity.loginWithSignupEmail()}"
                 android:id="@+id/email_login_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
