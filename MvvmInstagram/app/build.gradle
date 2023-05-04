@@ -4,6 +4,7 @@ plugins {
     //firebase 쓸때 필요한 플러그인 자동완성 안됨 스펠링 주의
     //그다음 구글아이디 로그인하고 앱을 firebase에 연결 들어가서 sign-in method 설정
     id 'com.google.gms.google-services'
+    id 'kotlin-android-extensions'
 }
 
 android {

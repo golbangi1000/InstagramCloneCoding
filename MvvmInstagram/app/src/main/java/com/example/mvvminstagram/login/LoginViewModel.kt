@@ -33,7 +33,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application){
 
     init {
         var gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN)
-            .requestIdToken(context.getString(R.)
+            .requestIdToken(context.getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
 
