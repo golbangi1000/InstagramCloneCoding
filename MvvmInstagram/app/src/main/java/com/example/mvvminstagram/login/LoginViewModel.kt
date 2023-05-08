@@ -15,7 +15,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 class LoginViewModel(application: Application) : AndroidViewModel(application){
 
     //회원가입을 관리하는 변수
-    var  auth =  FirebaseAuth.getInstance()
+    var auth =  FirebaseAuth.getInstance()
     var id : MutableLiveData<String> = MutableLiveData("")
     var password : MutableLiveData<String> = MutableLiveData("")
 
@@ -31,8 +31,8 @@ class LoginViewModel(application: Application) : AndroidViewModel(application){
 
 
     init {
-        var gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN)
-            .requestIdToken("715620186480-8baul0f4oihut1t3o4upik8sc6ccqqpm.apps.googleusercontent.com")
+        var gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(context.getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
 

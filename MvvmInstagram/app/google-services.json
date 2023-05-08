@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "715620186480-bkuuis0hebuo7h24bgkq4rsk5m4oa7gc.apps.googleusercontent.com",
+          "client_id": "715620186480-k89cblkbbkc83ruc9turcs0m8jauivks.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.mvvminstagram",
-            "certificate_hash": "82184bcb32681ac8023412def319de55ae37c9a9"
+            "certificate_hash": "f010ee0013c2cec6b1cd0f18db2c57ca34fb52c8"
           }
         },
         {
