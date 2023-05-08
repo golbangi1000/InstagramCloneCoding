@@ -1,7 +1,6 @@
 package com.example.mvvminstagram.login
 
 import android.app.Application
-import android.os.Build.VERSION_CODES.R
 import android.view.View
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
@@ -33,11 +32,11 @@ class LoginViewModel(application: Application) : AndroidViewModel(application){
 
     init {
         var gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN)
-            .requestIdToken(context.getString(R.string.default_web_client_id))
+            .requestIdToken("715620186480-8baul0f4oihut1t3o4upik8sc6ccqqpm.apps.googleusercontent.com")
             .requestEmail()
             .build()
 
-        googleSigninClient = GoogleSignIn.getClient(context, gso)
+            googleSigninClient = GoogleSignIn.getClient(context, gso)
     }
 
     fun loginWithSignupEmail(){  //이 function이 xml에서 () -> activity.loginWithSignupEmail 이걸로 버튼눌렸을때 작동됨

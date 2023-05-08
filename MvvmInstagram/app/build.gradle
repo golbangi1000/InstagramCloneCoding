@@ -4,7 +4,6 @@ plugins {
     //firebase 쓸때 필요한 플러그인 자동완성 안됨 스펠링 주의
     //그다음 구글아이디 로그인하고 앱을 firebase에 연결 들어가서 sign-in method 설정
     id 'com.google.gms.google-services'
-    id 'kotlin-android-extensions'
 }
 
 android {
@@ -44,13 +43,13 @@ dependencies {
 
     //firebase 관련 dependencies
     implementation platform('com.google.firebase:firebase-bom:32.0.0') //여기서 버전관리해서 바로 밑에는 버전 써져있는거 지움
-    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.firebase:firebase-auth-ktx:22.0.0'
 
     implementation 'com.google.android.gms:play-services-auth:20.5.0'
 
     implementation 'androidx.fragment:fragment-ktx:1.5.7'
     implementation 'androidx.activity:activity-ktx:1.7.1'
-    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
