@@ -10,6 +10,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.mvvminstagram.R
 import com.example.mvvminstagram.databinding.ActivityLoginBinding
+import com.facebook.CallbackManager
+import com.facebook.login.LoginManager
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -32,6 +34,7 @@ class LoginActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
         setObserve()
     }
+
 
     fun setObserve(){
         loginViewModel.showInputNumberActivity.observe(this){
