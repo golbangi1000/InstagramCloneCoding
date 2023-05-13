@@ -24,6 +24,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application){
     //로그인 성공했을때 쓰는 변수
     var showInputNumberActivity : MutableLiveData<Boolean> = MutableLiveData(false)
     var showFindIDActivity : MutableLiveData<Boolean> = MutableLiveData(false)
+    var showMainActivity : MutableLiveData<Boolean> =  MutableLiveData(false)
     val context = getApplication<Application>().applicationContext
 
     var googleSigninClient : GoogleSignInClient
@@ -49,11 +50,25 @@ class LoginViewModel(application: Application) : AndroidViewModel(application){
                 showInputNumberActivity.value = true
             } else{
                 //아이디가 있을경우
-
+                loginEmail()
             }
         }
 
     }
+
+        fun loginEmail(){
+            println("Email")
+            auth.signInWithEmailAndPassword(id.value.toString(), password.value.toString()).addOnCompleteListener {
+                if(it.isSuccessful){
+                    if(it.result.user?.isEmailVerified == true){
+                            showMainActivity.value = true
+                    } else{
+                        showInputNumberActivity.value = true
+                    }
+                }
+            }
+
+        }
 
         fun loginGoogle(view : View){
 
@@ -65,11 +80,11 @@ class LoginViewModel(application: Application) : AndroidViewModel(application){
             val credential = GoogleAuthProvider.getCredential(idToken,null)
             auth.signInWithCredential(credential).addOnCompleteListener {
                 if(it.isSuccessful){
-                    //loginViewModel의 showInputNumberActivity의 value를 true로 바꿈
-                    showInputNumberActivity.value = true
-                } else{
-                    //아이디가 있을경우
-
+                    if(it.result.user?.isEmailVerified == true){
+                        showMainActivity.value = true
+                    } else{
+                        showInputNumberActivity.value = true
+                    }
                 }
             }
 

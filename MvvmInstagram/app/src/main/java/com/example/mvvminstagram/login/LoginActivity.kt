@@ -8,6 +8,7 @@ import android.renderscript.ScriptGroup.Input
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import com.example.mvvminstagram.MainActivity
 import com.example.mvvminstagram.R
 import com.example.mvvminstagram.databinding.ActivityLoginBinding
 import com.facebook.CallbackManager
@@ -53,6 +54,12 @@ class LoginActivity : AppCompatActivity() {
                 startActivity(Intent(this,FindIdActivity::class.java))
             }
         }
+        loginViewModel.showMainActivity .observe(this){
+            if(it){
+                startActivity(Intent(this, MainActivity::class.java))
+            }
+        }
+
     }
 
 
